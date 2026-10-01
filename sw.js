@@ -1,5 +1,5 @@
-// 건강원리 오프라인 캐시 (버전 2026.10.01-1348)
-const C = 'health-2026.10.01-1348';
+// 건강원리 오프라인 캐시 (버전 2026.10.01-1402)
+const C = 'health-2026.10.01-1402';
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(C).then(c => c.addAll(['./', 'index.html', 'manifest.json', 'icon-192.png']))); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== C).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
